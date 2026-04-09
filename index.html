@@ -1,1 +1,378 @@
-<h1>Hello World Wide Web!</h1>
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <title>Toronto Cupcake - Personal Portfolio</title>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Jost', sans-serif;
+      background-color: #fcf9f8;
+      color: #3d2b2b;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* FLUID CONTAINER: 1200px limit using Percentages */
+    .centered-content-wrapper {
+      width: 90%; 
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #fcf9f8;
+      border-bottom: 1px solid #e8d5d5;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    .main-navigation-menu {
+      display: inline-block;
+      vertical-align: middle;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-navigation-menu li {
+      display: inline-block;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    .main-navigation-menu a:link { color: #3d2b2b; text-decoration: none; font-size: 12px; font-weight: 500; }
+    .main-navigation-menu a:visited { color: #3d2b2b; }
+    .main-navigation-menu a:hover { color: #6b3f3f; }
+    .main-navigation-menu a:active { color: #6b3f3f; }
+
+    .brand-logo-container {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 20px;
+      margin-right: 20px;
+      text-align: center;
+    }
+
+    /* Logo Text styling: No span, no display block */
+    .brand-logo-container a {
+      text-decoration: none;
+      color: #3d2b2b;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    .brand-logo-container img {
+      margin-bottom: 5px;
+    }
+
+    section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .section-main-heading {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-divider-line {
+      width: 80px;
+      height: 1px;
+      background-color: #3d2b2b;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 50px;
+    }
+
+    /* PERCENTAGE GRID: Hero (2 columns, 50/50) */
+    .welcome-banner-box {
+      width: 100%;
+      height: 500px;
+      background-color: #a48476;
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: 50% 50%; 
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .welcome-message {
+      font-size: 48px;
+      color: white;
+      text-align: left;
+      padding: 60px;
+    }
+
+    .welcome-banner-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* PERCENTAGE GRID: Highlights (3 columns: 32% x 3 + 2% gaps x 2 = 100%) */
+    .service-highlights-grid {
+      background-color: #f7ebea;
+      margin-top: 40px;
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: 32% 32% 32%;
+      column-gap: 2%;
+      padding: 50px;
+    }
+
+    .service-info-card {
+      text-align: center;
+    }
+
+    .about-us-grid {
+      display: grid;
+      grid-template-columns: 48% 48%;
+      column-gap: 4%;
+      text-align: left;
+      align-items: center;
+    }
+
+    .about-us-grid img {
+      width: 100%;
+      height: auto;
+    }
+
+    .cupcake-showcase-grid {
+      display: grid;
+      grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+      column-gap: 2%;
+      row-gap: 20px;
+      text-align: left;
+    }
+
+    .product-item-card {
+      background-color: #f7ebea;
+      border-radius: 16px;
+    }
+
+    .product-item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .product-text-area {
+      padding: 20px;
+    }
+
+    .contact-form-info-grid {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      background-color: #f7ebea;
+      border-radius: 18px;
+      text-align: left;
+    }
+
+    .form-submission-side {
+      padding: 50px;
+      border-right: 1px solid #e8d5d5;
+    }
+
+    .business-info-area {
+      padding: 50px 50px 50px 80px; 
+    }
+
+    .business-hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .business-hours-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid #d4a0a0;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: #3d2b2b;
+      color: white;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .footer-navigation-links a {
+      color: #e8d5d5;
+      font-size: 11px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="centered-content-wrapper">
+      <ul class="main-navigation-menu">
+        <li><a href="#store">SHOP</a></li>
+        <li><a href="#welcome">OCCASIONS</a></li>
+      </ul>
+
+      <div class="brand-logo-container">
+        <a href="#welcome">
+          <img src="transparent-TO-logo.png" width="52" height="52" alt="Toronto Cupcake brand logo">
+          <br>
+          TORONTO CUPCAKE
+        </a>
+      </div>
+
+      <ul class="main-navigation-menu">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="welcome">
+    <div class="centered-content-wrapper">
+      <div class="welcome-banner-box">
+        <h1 class="welcome-message">TORONTO'S SWEETEST MOMENTS. DELIVERED.</h1>
+        <img src="front-page.png" alt="Assorted gourmet cupcakes">
+      </div>
+
+      <div class="service-highlights-grid">
+        <div class="service-info-card">
+          <img src="mixing-bowl.png" width="40" height="40" alt="Mixing bowl icon">
+          <p><strong>BAKED FRESH DAILY</strong></p>
+          <p>Handcrafted in our Toronto kitchen every morning.</p>
+        </div>
+        <div class="service-info-card">
+          <img src="truck.png" width="40" height="40" alt="Delivery truck icon">
+          <p><strong>LOCAL GTA DELIVERY</strong></p>
+          <p>Straight to your door, seven days a week.</p>
+        </div>
+        <div class="service-info-card">
+          <img src="cake.png" width="40" height="40" alt="Custom cake icon">
+          <p><strong>CUSTOM EVENTS</strong></p>
+          <p>Perfect for weddings, corporate events, and parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="centered-content-wrapper">
+      <h2 class="section-main-heading">ABOUT US</h2>
+      <div class="section-divider-line"></div>
+      
+      <div class="about-us-grid">
+        <img src="about.png" width="570" height="500" alt="Inside the Toronto Cupcake bakery">
+        <p style="font-size: 24px; font-family: 'Cormorant Garamond', serif;">
+          Founded in 2010, Toronto Cupcake is the city's premier destination for gourmet, handcrafted treats. 
+          Baked fresh daily with the finest ingredients, our cupcakes are designed to bring joy to every occasion.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="store">
+    <div class="centered-content-wrapper">
+      <h2 class="section-main-heading">SHOP</h2>
+      <div class="section-divider-line"></div>
+
+      <div class="cupcake-showcase-grid">
+        <div class="product-item-card">
+          <img src="peanut.png" width="285" height="250" alt="Peanut Butter Cupcake">
+          <div class="product-text-area">
+            <p>PEANUT BUTTER CUP(CAKE)</p>
+            <p>$3.75 +</p>
+          </div>
+        </div>
+
+        <div class="product-item-card">
+          <img src="cookie.png" width="285" height="250" alt="Cookies and Cream Cupcake">
+          <div class="product-text-area">
+            <p>COOKIES & CREAM</p>
+            <p>$3.75 +</p>
+          </div>
+        </div>
+
+        <div class="product-item-card">
+          <img src="choco.png" width="285" height="250" alt="Classic Chocolate Cupcake">
+          <div class="product-text-area">
+            <p>CLASSIC CHOCOLATE</p>
+            <p>$3.75 +</p>
+          </div>
+        </div>
+
+        <div class="product-item-card">
+          <img src="matcha.png" width="285" height="250" alt="Matcha Cupcake">
+          <div class="product-text-area">
+            <p>MATCHA</p>
+            <p>$3.75 +</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="centered-content-wrapper">
+      <h2 class="section-main-heading">LET'S GET IN TOUCH</h2>
+      <div class="section-divider-line"></div>
+      
+      <div class="contact-form-info-grid">
+        <div class="form-submission-side">
+          <h3>INQUIRY</h3>
+          <p>NAME:</p>
+          <input type="text" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+          <p>EMAIL:</p>
+          <input type="text" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+          <button style="background-color: #3d2b2b; color: white; border: none; padding: 15px 40px; border-radius: 50px;">SEND</button>
+        </div>
+
+        <div class="business-info-area">
+          <p><strong>LOCATION (PLANNED):</strong></p>
+          <p>Queen St E & Lee Ave, Toronto, ON M4E 1C9</p>
+          <br>
+          <p><strong>PHONE:</strong></p>
+          <p>647-478-9464</p>
+          <br>
+          <h3>HOURS</h3>
+          <table class="business-hours-table">
+            <tr><td>Monday - Saturday</td><td>7:00 AM – 10:00 PM</td></tr>
+            <tr><td>Sunday</td><td>7:00 AM – 10:00 PM *</td></tr>
+          </table>
+          <p style="font-size: 12px; margin-top: 10px;">* SUNDAY: NO PICK-UPS AVAILABLE. DELIVERIES REQUIRE 2 DOZEN OR MORE.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="centered-content-wrapper">
+      <p class="footer-navigation-links">
+        <a href="#">PRIVACY POLICY</a> | <a href="#">COOKIE MANAGEMENT</a> | <a href="#">TERMS AND CONDITIONS</a> | <a href="#">ACCESSIBILITY</a>
+      </p>
+      <br>
+      <p style="font-size: 11px; letter-spacing: 2px;">ENGLISH</p>
+      
+      <div style="margin-top: 20px;">
+        <a href="https://www.instagram.com/torontocupcake">
+          <img src="insta.png" width="30" height="30" alt="Instagram Profile">
+        </a>
+    </div>
+  </footer>
+
+</body>
+</html>
